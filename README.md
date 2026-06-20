@@ -1,4 +1,17 @@
-# rag-eval-harness — Production-grade evals for RAG systems
+<div align="center">
+
+# rag-eval-harness — Production evals for RAG systems
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
+[![Anthropic](https://img.shields.io/badge/Anthropic-Claude-CC785C)](https://anthropic.com)
+[![OpenAI](https://img.shields.io/badge/OpenAI-API-412991?logo=openai&logoColor=white)](https://platform.openai.com)
+[![Status](https://img.shields.io/badge/Status-Working%20code-blue)](#)
+[![CI](https://img.shields.io/badge/Runs%20in-CI-2088FF?logo=github-actions&logoColor=white)](.github/workflows/eval.yml)
+
+</div>
+
+---
 
 > A small, focused evaluation harness for RAG pipelines. Measures **faithfulness**, **answer relevance**, and **retrieval recall@k** on a labelled question set. Runs locally, runs in CI, gives you a single number to decide whether a prompt or retrieval change is a regression.
 
