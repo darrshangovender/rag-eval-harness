@@ -1,0 +1,18 @@
+# Labelled question set for the smoke-test corpus in examples/baseline_rag.py.
+# Real users would replace this with their own labelled questions.
+
+- question: "Where is Agulhas Code based?"
+  gold_chunk_ids: ["doc-1"]
+  reference_answer: "Durban, South Africa."
+
+- question: "What does InsightEngine do?"
+  gold_chunk_ids: ["doc-2"]
+  reference_answer: "Natural-language SQL analytics layer over multi-table warehouses, with LLM query-planning and sqlglot AST guardrails against destructive operations."
+
+- question: "Why would you use Postgres with pgvector for RAG?"
+  gold_chunk_ids: ["doc-3"]
+  reference_answer: "Avoids operational cost of a separate vector database; supports transactional writes alongside embeddings."
+
+- question: "When was Agulhas Code founded?"
+  gold_chunk_ids: ["doc-1"]
+  reference_answer: "2024."
