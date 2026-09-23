@@ -12,7 +12,7 @@ import argparse
 import importlib
 import sys
 import time
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 import yaml
@@ -61,7 +61,7 @@ def main() -> int:
     p95 = latencies[int(len(latencies) * 0.95)] if len(latencies) >= 20 else latencies[-1]
 
     report = RunReport(
-        timestamp=datetime.utcnow().strftime("%Y%m%d-%H%M%S"),
+        timestamp=datetime.now(UTC).strftime("%Y%m%d-%H%M%S"),
         pipeline=args.pipeline,
         n_questions=len(questions),
         faithfulness=sum(faith_scores) / len(faith_scores),
