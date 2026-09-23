@@ -1,0 +1,28 @@
+name: RAG Eval
+
+on:
+  pull_request:
+    paths:
+      - "examples/**"
+      - "harness/**"
+      - "data/**"
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - name: Install
+        run: uv sync
+      - name: Run RAG eval (fail on regression)
+        run: uv run python -m harness.run_eval --questions data/golden.yml --pipeline examples.baseline_rag
+      - name: Upload run report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-report
+          path: runs/
